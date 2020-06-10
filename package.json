@@ -2,7 +2,7 @@
   "name": "landing",
   "version": "1.0.0",
   "description": "",
-  "main": "gulpfile.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,13 +10,24 @@
     "type": "git",
     "url": "git+https://github.com/GitMng/TestLanding.git"
   },
-  "author": "",
+  "author": "Andrew Panov",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/GitMng/TestLanding/issues"
   },
   "homepage": "https://github.com/GitMng/TestLanding#readme",
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify": "^3.0.2",
+    "node-sass": "^4.14.1",
+    "normalize.css": "^8.0.1"
+  },
+  "dependencies": {
+    "slick-carousel": "^1.8.1"
   }
 }

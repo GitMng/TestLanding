@@ -1,0 +1,77 @@
+@import "libs";
+@import "fonts";
+
+$bg-color: #2a2a2a;
+%preloader-stroke-dasharray{
+  stroke-dasharray: 200%;
+}
+body{
+  background-color: $bg-color;
+}
+#main_parallax{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../app/img/bg.jpg) 0 0 / cover no-repeat;
+}
+#loader{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: $bg-color;
+}
+svg{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg) scale(1);
+}
+.stroke{
+  &-still{
+    stroke: #232323;
+  }
+  &-animation{
+    animation: stroke-spacing 1.2s ease-in, stroke-color 4.8s linear;
+    animation-iteration-count: infinite;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    transform-origin: center center;
+  }
+}
+@keyframes stroke-spacing{
+  0% {
+    stroke-dashoffset: 200;
+    @extend %preloader-stroke-dasharray;
+  }
+  45% {
+    stroke-dashoffset: 0;
+    @extend %preloader-stroke-dasharray;
+  }
+  90% {
+    stroke-dashoffset: -200;
+    @extend %preloader-stroke-dasharray;
+  }
+  100% {
+    stroke-dashoffset: -200;
+    @extend %preloader-stroke-dasharray;
+  }
+}
+@keyframes stroke-color{
+  0%  { stroke: #3399dd; }
+  24% { stroke: #663333; }
+  25% { stroke: #337766; }
+  49% { stroke: #3377aa; }
+  50% { stroke: #333366; }
+  74% { stroke: #333366; }
+  75% { stroke: #773355; }
+  99% { stroke: #773355; }
+}
+
+@import "media";
